@@ -1,0 +1,158 @@
+/* Resetting the box model */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Removing default browser styling */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Removing list styles */
+ul, ol {
+    list-style: none;
+}
+
+/* Removing default link styling */
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Setting default text alignment */
+p, ul, ol, dl {
+    text-align: left;
+}
+
+/* Main code */
+
+h1 {
+    font-size: 2.25em;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #00ffff, #ff00ff, #7700ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Use color instead of text-fill-color for better compatibility */
+    animation: gradientAnimation 3s linear infinite alternate; /* Adjusted animation properties */
+    background-size: 200% 100%; /* This is crucial for the animation effect */
+}
+
+body {
+    background-color: #151515df;
+    color: #ffffff;
+}
+
+/* Base styles for inputs */
+div > input {
+    margin: .5rem;
+    /* max-width: 60%; */
+
+    height: 2.4rem;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 1rem; /* Font size */
+    color: #000; /* Text color */
+    background-color: #fff; /* Background color */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    padding: 0.5rem; /* Padding inside the input */
+}
+
+/* Focus styles for inputs */
+div > input:first-child:focus {
+    outline: none; /* Removes default outline */
+    border: 2px solid #007BFF; /* Custom border color on focus */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Subtle shadow effect */
+}
+.border-animation {
+    outline: none; /* Removes default outline */
+    border: 2px solid #007BFF; /* Custom border color on focus */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Subtle shadow effect */
+}
+
+.input-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+div > input:first-child {
+    grid-column: 4 / 8;
+}
+
+.input-container input:last-child {
+    grid-column: 8 / 10;
+    min-width: fit-content;
+}
+
+.todo-list {
+    /* display: inline-block; */
+    /* max-width: fit-content; */
+    /* min-width: 20rem;
+    width: 60%; */
+    margin: 0 auto;
+    /* background-color: #7700ff; */
+}
+
+.todo-list > * {
+    display: flex;
+    align-items: center;
+    /* border-radius: 12px; */
+    background-color: #0b0b0b;
+    margin: 0.5rem auto;
+    max-width: 100%;
+    width: 25rem;
+    min-width: 0rem;
+    padding: .5rem;
+    /* width: 60%; */
+}
+/* .task {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #0b0b0b;
+} */
+
+.task > * {
+    padding: .5rem;
+    border-radius: 12px;
+}
+.task p {
+    margin-right: auto;
+    background-color: #222; /* Slightly lighter dark background for the <p> element */
+    color: #f0f0f0; /* Light text color for contrast */
+    word-break: break-all;
+}
+.task .up,
+.task .down,
+.task .delete {
+    cursor: pointer;
+}
+.task:first-child .up {
+    cursor: default;
+}
+.task:last-child .down {
+    cursor: default;
+}
+
+.task .delete {
+    background-color: #ff0000;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+/* Keyframes for the gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 75%;
+    }
+}
